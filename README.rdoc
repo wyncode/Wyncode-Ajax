@@ -1,3 +1,5 @@
 1) git clone git@github.com:FrankOrtiz/Wyncode-Ajax.git     (clone repo)
+
 2) rake db:migrate      (database migrate)
+
 3) rails s      (run server)
