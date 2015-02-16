@@ -8,3 +8,9 @@
   - git clone git@github.com:FrankOrtiz/Wyncode-Ajax.git
   - rake db:migrate
   - rails s
+
+==== Steps
+    1. Create a get request to view changes by other users instantly
+    2. Create form on index page using view helpers
+    3. Use jQuery to append information from the form
+    4. Make post requests to index.json to create items without leaving the page
