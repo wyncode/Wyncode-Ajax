@@ -1,3 +1,8 @@
+Purpose of breakout 
+  
+  - Create, edit, and view tasks from a single page
+  
+
 1) git clone git@github.com:FrankOrtiz/Wyncode-Ajax.git     (clone repo)
 
 2) rake db:migrate      (database migrate)
