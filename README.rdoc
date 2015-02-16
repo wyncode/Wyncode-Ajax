@@ -1,7 +1,7 @@
 === Purpose of breakout 
   
   - Learn how ajax works, and when to use it
-  - Create, edit, and view tasks from a single page
+  - Create and view tasks from a single page
   - learn how to work around turbo-links with jquery
   
 === Getting Started
