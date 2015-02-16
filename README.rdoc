@@ -1,10 +1,10 @@
-Purpose of breakout 
+=== Purpose of breakout 
   
+  - Learn how ajax works, and when to use it
   - Create, edit, and view tasks from a single page
+  - learn how to work around turbo-links with jquery
   
-
-1) git clone git@github.com:FrankOrtiz/Wyncode-Ajax.git     (clone repo)
-
-2) rake db:migrate      (database migrate)
-
-3) rails s      (run server)
+=== Getting Started
+  - git clone git@github.com:FrankOrtiz/Wyncode-Ajax.git
+  - rake db:migrate
+  - rails s
