@@ -5,6 +5,9 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    @task = Task.new
+
+    render layout: !request.xhr?
   end
 
   # GET /tasks/1
@@ -28,7 +31,13 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { 
+          if request.xhr?
+            redirect_to tasks_path
+          else
+            redirect_to @task, notice: 'Task was successfully created.' 
+          end
+        }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }

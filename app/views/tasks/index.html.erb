@@ -3,23 +3,34 @@
 <h1>Listing Tasks</h1>
 
 
-
-<%= form_tag("/tasks", method: "get", id:"add-task") do %>
-  <br>
-  <%= text_field_tag :new_task, nil, placeholder:"new goal" %>
-  <%= date_field_tag :new_due_date %>
+<%= form_for @task, remote: true do |f| %>
+  <%= f.text_field :goal, placeholder:"new goal" %>
+  <%= f.date_field :due_date %>
+  <%= f.submit "Add Task" %>
 <% end%>
 
 
+<table>
+  <thead>
+    <tr>
+      <th>Goal</th>
+      <th>Due Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<ul>
+  <tbody>
     <% @tasks.each do |task| %>
-    <li>
-        <%= task.goal %>
-        <%= task.due_date %>
-    </li>
+      <tr>
+        <td><%= task.goal %></td>
+        <td><%= task.due_date || "None" %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-</ul>
+  </tbody>
+</table>
 
 <%= link_to 'New Task', new_task_path %>
 <br>
