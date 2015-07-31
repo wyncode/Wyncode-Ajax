@@ -1,18 +1,20 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-ready = function(){
-	
-	// setInterval(function(){
-	// 	getTasks();
-	// }, 5000);
+function ready() {
+  console.log('document ready');
 
-	$('body').on('ajax:complete', '#new_task', function(xhr, obj){
-		console.dir(arguments);
-		console.log(obj.responseText);
-		$('body').html(obj.responseText);
-	});
+  $('#new_task').on("ajax:success", function(evt, data) {
+    console.log(arguments);
+    // window.location.reload();
+    $('#task_name').val('');
+    $('body').append(data);
+  }).on('ajax:error', function() {
+    alert('Oops!');
+  });
 }
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+// $(ready);
+// $(document).on('page:load', ready);
+
+$(document).on('ready page:load', ready);

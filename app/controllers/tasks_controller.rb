@@ -6,13 +6,15 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
     @task = Task.new
-
-    render layout: !request.xhr?
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    # render layout: !request.xhr?
+    if request.xhr?
+      render '_task', layout: false, locals: { task: @task }
+    end
   end
 
   # GET /tasks/new
@@ -31,13 +33,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { 
-          if request.xhr?
-            redirect_to tasks_path
-          else
-            redirect_to @task, notice: 'Task was successfully created.' 
-          end
-        }
+        format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -78,6 +74,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:goal, :due_date)
+      params.require(:task).permit(:name, :due_date)
     end
 end

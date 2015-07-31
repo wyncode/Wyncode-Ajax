@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  goal: MyString
-  due_date: 2015-02-16
+  name: MyString
+  due_date: 2015-07-31
 
 two:
-  goal: MyString
-  due_date: 2015-02-16
+  name: MyString
+  due_date: 2015-07-31

@@ -1,36 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h1>New Task</h1>
+
+<%= render 'form' %>
+
 <h1>Listing Tasks</h1>
 
+<% @tasks.each do |task| %>
+  <%= render task %>
+<% end %>
 
-<%= form_for @task, remote: true do |f| %>
-  <%= f.text_field :goal, placeholder:"new goal" %>
-  <%= f.date_field :due_date %>
-  <%= f.submit "Add Task" %>
-<% end%>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Goal</th>
-      <th>Due Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.goal %></td>
-        <td><%= task.due_date || "None" %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Task', new_task_path %>
-<br>

@@ -7,6 +7,7 @@ These instructions don't match the code yet, but this is how I run the tutorial 
 
 Tasks:
 - rails g scaffold task name --javascript-engine=js
+- make task index page the root
 - render new task form on task index page
 - make the new task form AJAXy with remote: true
 - add a JavaScript callback on document ready for the form ajax:success and ajax:error events
@@ -21,3 +22,8 @@ Tasks:
 - in JavaScript, reset the form after submit 
 - linkify the task name in the task partial
 - demo how turbolinks breaks the form when you view a task and come back, then fix it with page:load
+
+Bonus:
+- refresh list
+- refactor task show to use view partial
+- show task detail in a modal popup
