@@ -11,7 +11,6 @@ ready = function(){
 		console.dir(arguments);
 		console.log(obj.responseText);
 		$('body').html(obj.responseText);
-		$('#task_goal').focus()
 	});
 }
 

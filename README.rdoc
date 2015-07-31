@@ -1,16 +1,23 @@
-=== Purpose of breakout 
-  
-  - Learn how ajax works, and when to use it
-  - Create and view tasks from a single page
-  - learn how to work around turbo-links with jquery
-  
-=== Getting Started
-  - git clone git@github.com:FrankOrtiz/Wyncode-Ajax.git
-  - rake db:migrate
-  - rails s
+== AJAX ToDo List
 
-==== Steps
-    1. Create a get request to view changes by other users instantly
-    2. Create form on index page using view helpers
-    3. Use jQuery to append information from the form
-    4. Make post requests to index.json to create items without leaving the page
+Objective:
+(Partially) convert the scaffold ToDo list into a SPA (single-page application) with AJAX.
+
+These instructions don't match the code yet, but this is how I run the tutorial now.
+
+Tasks:
+- rails g scaffold task name --javascript-engine=js
+- render new task form on task index page
+- make the new task form AJAXy with remote: true
+- add a JavaScript callback on document ready for the form ajax:success and ajax:error events
+    - http://edgeguides.rubyonrails.org/working_with_javascript_in_rails.html#form-for
+    - https://github.com/rails/jquery-ujs/wiki/ajax
+- try window.location.reload() on success
+- examine the arguments passed to the callback. How can we recycle this instead of throwing it away?
+- turn off the layout in Tasks#show with render layout: !request.xhr?
+- append the ajax response to the body
+- update the index page to render task partials instead of table rows
+- update the Tasks#show to render the task partial if request.xhr? 
+- in JavaScript, reset the form after submit 
+- linkify the task name in the task partial
+- demo how turbolinks breaks the form when you view a task and come back, then fix it with page:load
