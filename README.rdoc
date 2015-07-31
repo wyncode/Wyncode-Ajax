@@ -23,7 +23,10 @@ Tasks:
 - linkify the task name in the task partial
 - demo how turbolinks breaks the form when you view a task and come back, then fix it with page:load
 
+Bugs:
+- flash message shows up on refresh sometimes
+
 Bonus:
 - refresh list
-- refactor task show to use view partial
+- refactor Task#show to use view partial
 - show task detail in a modal popup
