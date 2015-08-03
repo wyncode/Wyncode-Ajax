@@ -1,6 +1,6 @@
-== AJAX ToDo List
+= AJAX ToDo List
 
-Objective:
+== Objective
 (Partially) convert the scaffold ToDo list into a SPA (single-page application) with AJAX.
 
 These instructions don't match the code yet, but this is how I run the tutorial now.
@@ -28,5 +28,6 @@ Bugs:
 
 Bonus:
 - refresh list
+  - This will require using a delegated event to reattach the event handlers to the form if you update the entire page (and not if you just update the list).
 - refactor Task#show to use view partial
 - show task detail in a modal popup
