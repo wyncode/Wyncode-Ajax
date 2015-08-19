@@ -15,6 +15,7 @@ Tasks:
     - https://github.com/rails/jquery-ujs/wiki/ajax
 - try window.location.reload() on success
 - examine the arguments passed to the callback. How can we recycle this instead of throwing it away?
+    - It seems to be showing the contents of Tasks#show for the new task created. Maybe we can reuse that.
 - turn off the layout in Tasks#show with render layout: !request.xhr?
 - append the ajax response to the body
 - update the index page to render task partials instead of table rows
