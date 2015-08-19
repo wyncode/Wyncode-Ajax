@@ -1,11 +1,12 @@
-= AJAX ToDo List
+# AJAX ToDo List
 
-== Objective
+## Objective
 (Partially) convert the scaffold ToDo list into a SPA (single-page application) with AJAX.
 
 These instructions don't match the code yet, but this is how I run the tutorial now.
 
-Tasks:
+## Tasks
+
 - rails g scaffold task name --javascript-engine=js
 - make task index page the root
 - render new task form on task index page
@@ -24,10 +25,10 @@ Tasks:
 - linkify the task name in the task partial
 - demo how turbolinks breaks the form when you view a task and come back, then fix it with page:load
 
-Bugs:
+## Bugs
 - flash message shows up on refresh sometimes
 
-Bonus:
+## Bonus
 - refresh list
   - This will require using a delegated event to reattach the event handlers to the form if you update the entire page (and not if you just update the list).
 - refactor Task#show to use view partial
